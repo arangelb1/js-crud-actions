@@ -32,8 +32,17 @@ module.exports = function (db) {
       }
     });
 
+  // router.get("/products/:id", (req, res) => {
+  //   res.send(db.get("products".find({id: req.params.id})).value());
+  // });
+
   router.get("/products/:id", (req, res) => {
-    res.send(db.get("products".find({id: req.params.id})).value());
+    const result = db.get("products".find({id: req.params.id})).value();
+      if (result) {
+        res.sendStatus(result);
+      } else {
+        res.status(404).send();
+      }
   });
 
 
