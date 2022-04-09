@@ -16,6 +16,7 @@ document.getElementById("load").onclick = function() {
       }
     });
   };
+};
   
   // const req = new XMLHttpRequest();
   // req.open('GET', '/api/products');
@@ -25,7 +26,7 @@ document.getElementById("load").onclick = function() {
   // }
 
   // req.send();
-};
+
 
 function addList({ data }) {
   resetContentArea();
